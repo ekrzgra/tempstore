@@ -1,4 +1,4 @@
-package tempstore.model;
+package tempstore.entities;
 
 import java.util.Date;
 
