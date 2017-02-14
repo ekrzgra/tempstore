@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import tempstore.dto.TempRead;
 
 @RestController
+@RequestMapping("/read")
 public class Read {
 
-	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public void save(TempRead reading) {
 
 	}
