@@ -1,4 +1,4 @@
-package tempstore.repositories;
+package tempstore.repositories.interfaces;
 
 import java.util.List;
 

@@ -16,7 +16,7 @@ import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 
 import tempstore.entities.Reading;
-import tempstore.repositories.ReadingRepository;
+import tempstore.repositories.interfaces.ReadingRepository;
 
 public class HomeControllerTest {
 

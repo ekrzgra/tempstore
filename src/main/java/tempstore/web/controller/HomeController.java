@@ -6,9 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import tempstore.repositories.ReadingRepository;
+import tempstore.repositories.interfaces.ReadingRepository;
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
 
 	private ReadingRepository readingRepo;
@@ -18,7 +19,7 @@ public class HomeController {
 		this.readingRepo = readingRepo;
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public String home(Model model) {
 		model.addAttribute(readingRepo.findReadings());
 		return "home";
