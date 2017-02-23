@@ -19,6 +19,18 @@
 		<spring.version>4.3.6.RELEASE</spring.version>
 	</properties>
 
+	<profiles>
+		<profile>
+			<id>development</id>
+			<properties>
+				<db.url>jdbc:mysql://192.168.99.100:3306/tempstore</db.url>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
+
 	<dependencies>
 
 		<!-- SCOPE TEST -->
@@ -57,7 +69,7 @@
 			<scope>test</scope>
 		</dependency>
 
-	    <!-- SCOPE RUNTIME -->
+		<!-- SCOPE RUNTIME -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -80,5 +92,22 @@
 
 	<build>
 		<finalName>tempstore</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<webResources>
+						<resource>
+							<!-- this is relative to the pom.xml directory -->
+							<directory>src/main/webapp/META-INF</directory>
+							<filtering>true</filtering>
+							<targetPath>META-INF</targetPath>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>

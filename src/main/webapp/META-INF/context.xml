@@ -4,5 +4,5 @@
 	<Resource name="jdbc/tempstore" auth="Container" type="javax.sql.DataSource"
 		maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="tempstore"
 		password="tempstore" driverClassName="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://192.168.99.100:3306/tempstore" />
+		url="${db.url}" />
 </Context>
